@@ -26,12 +26,16 @@ Component({
    */
   methods: {
     clickView:function(e){
-      if(true){
-        let a = 1
-        var b = 2
-      }
-      //console.log(b)//结果是：2(整个函数块)
-      //console.log(a)//结果是：报错(块级定义)
+      let like = this.properties.like
+      let count = this.properties.count
+
+      //count = like ? count-1 : count+1 //like是true实心的点击-1,false空心的点击+1
+      this.setData({
+        count: count,
+        like: !like //取反
+      })
+
+      
     }
   }
 })
