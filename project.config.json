@@ -13,9 +13,9 @@
 		"coverView": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.6.6",
 	"appid": "wx337616b8ad10ec5b",
-	"projectname": "MayTwo",
+	"projectname": "WeChatPro",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

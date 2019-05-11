@@ -1,6 +1,6 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--index.wxml-->
+<view class="container">
+  <view class='chunk color1'>1</view>
+  <view class='chunk color2'>2</view>
+  <view class='chunk color3'>3</view>
 </view>
