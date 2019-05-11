@@ -2,5 +2,5 @@
 <text>components/like/index.wxml</text> -->
 <view bind:tap="clickView" class='container'>
 <image class='container' src="{{like ? yesSrc : noSrc}}"></image>
-<text>9999</text>
+<text>{{count}}</text>
 </view>

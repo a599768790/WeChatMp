@@ -4,14 +4,19 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    like:{
+      type:Boolean
+    },
+    count:{
+      type:Number
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    like:true,
+    // like:true,
     yesSrc:"images/like.png",
     noSrc:"images/dislike.png"
   },
@@ -21,7 +26,12 @@ Component({
    */
   methods: {
     clickView:function(e){
-      console.log(e)
+      if(true){
+        let a = 1
+        var b = 2
+      }
+      //console.log(b)//结果是：2(整个函数块)
+      //console.log(a)//结果是：报错(块级定义)
     }
   }
 })
