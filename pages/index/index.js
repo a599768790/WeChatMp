@@ -2,13 +2,11 @@
 //获取应用实例
 const app = getApp()
 
+import {HTTP} from '../../utils/http.js'
+let http = new HTTP()//实例化一个类
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    data:1
+    test:1
 
   },
   //事件处理函数
@@ -19,15 +17,21 @@ Page({
   },
 
   onLoad: function(options) {
-    wx.request({
-      url:'http://bl.7yue.pro/v1/classic/latest',
-      header:{
-        appkey:'AbhC31IG7ruCDp57'
-      },
-      success:(res) => { 
-        console.log(this.data.test)//success:function(){}es5写法无法读取this这个值//es6箭头函数才可读取
+    http.request({
+      url:'classic/latest',
+      success:(res) => {
+        console.log(res)
       }
     })
+    // wx.request({
+    //   url:'http://bl.7yue.pro/v1/classic/latest',
+    //   header:{
+    //     appkey:'AbhC31IG7ruCDp57'
+    //   },
+    //   success:(res) => { 
+    //     console.log(this.data.test)//success:function(){}es5写法无法读取this这个值//es6箭头函数才可读取
+    //   }
+    // })
   }
   // onLoad: function () {
   //   if (app.globalData.userInfo) {
