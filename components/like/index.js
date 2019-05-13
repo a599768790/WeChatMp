@@ -9,6 +9,9 @@ Component({
     },
     count:{
       type:Number
+    },
+    test:{
+      type:Number
     }
   },
 
@@ -28,11 +31,12 @@ Component({
     clickView:function(e){
       let like = this.properties.like
       let count = this.properties.count
-
-      //count = like ? count-1 : count+1 //like是true实心的点击-1,false空心的点击+1
+      let test = this.properties.test
+      count = like ? count-1 : count+1 //like是true实心的点击-1,false空心的点击+1
       this.setData({
         count: count,
-        like: !like //取反
+        like: !like, //取反,
+        test:test + 1//setData是处理数据更新,而不是处理数据显示，显示通过页面传给组件即可
       })
 
       

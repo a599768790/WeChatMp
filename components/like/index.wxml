@@ -4,3 +4,4 @@
 <image class='container' src="{{like ? yesSrc : noSrc}}"></image>
 <text>{{count}}</text>
 </view>
+<text>{{test}}</text>

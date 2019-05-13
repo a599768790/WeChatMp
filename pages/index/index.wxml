@@ -1,2 +1,2 @@
-<v-like count="{{classic.fav_nums}}" like="{{classic.like_status}}"></v-like>
+<v-like count="{{classic.fav_nums}}" like="{{classic.like_status}}" test="{{test}}"></v-like>
 <!-- 在父页面显示组件的属性 -->

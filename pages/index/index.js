@@ -22,7 +22,8 @@ Page({
       success:(res) => {
         console.log(res)
         this.setData({//获取到的值更新给classic，传给组件去渲染页面
-          classic:res
+          classic:res,
+          // test:1
         })
       }
     })
