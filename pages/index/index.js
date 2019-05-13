@@ -6,8 +6,9 @@ import {HTTP} from '../../utils/http.js'
 let http = new HTTP()//实例化一个类
 Page({
   data: {
-    test:1
-
+    classic:null,
+    test:1,
+    //content:'aaa'
   },
   //事件处理函数
   bindViewTap: function() {

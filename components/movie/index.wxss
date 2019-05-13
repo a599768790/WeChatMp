@@ -1,0 +1,23 @@
+/* components/like/index.wxss */
+.container{
+  display: inline-flex;
+  flex-direction: row;
+  padding-top:10rpx;
+}
+
+.container image{
+  width:32rpx;
+  height: 28rpx;
+}
+.container text{
+  /* font-family: "siyuan"; */
+  font-size: 24rpx;
+  line-height: 24rpx;
+  color:#999999;
+  position: relative;
+  left:6rpx;
+  /* bottom:6rpx; */
+  /* bottom:10rpx; */
+  /* left:3rpx; */
+  
+}
