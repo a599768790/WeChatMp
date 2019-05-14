@@ -39,7 +39,10 @@ Component({
         test:test + 1//setData是处理数据更新,而不是处理数据显示，显示通过页面传给组件即可
       })
 
-      
+      let behavior = this.properties.like ? 'like' : 'cancellike'
+      this.triggerEvent('componentEvent',{
+        bevahior: behavior
+      })
     }
   }
 })

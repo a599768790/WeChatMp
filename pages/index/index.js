@@ -29,6 +29,10 @@ Page({
       }
     })
     
+  },
+  pageEvent:function(event){
+    console.log(event)
+    console.log(111);
   }
   
 })
