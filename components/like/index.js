@@ -21,7 +21,7 @@ Component({
   data: {
     // like:true,
     yesSrc:"images/like.png",
-    noSrc:"images/dislike.png"
+    noSrc:"images/dislike.png",
   },
 
   /**

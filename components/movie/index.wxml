@@ -1,3 +1,5 @@
-<!-- 
-<text>components/like/index.wxml</text> -->
-<text>{{content}}</text>
+<view class='movie-container'>
+<image class='movie-img' src="{{img}}" />
+<image class='tag' src="{{imatext}}" />
+<text class='content'>{{content}}</text>
+</view>

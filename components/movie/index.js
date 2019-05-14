@@ -17,7 +17,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    // aaa:"aaa"
+    imatext:'images/movietext.png'
   },
 
   /**

@@ -8,7 +8,7 @@ Page({
   data: {
     classic:null,
     test:1,
-    //content:'aaa'
+    content:'aaa'
   },
   //事件处理函数
   bindViewTap: function() {
