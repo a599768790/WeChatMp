@@ -3,6 +3,9 @@
 const app = getApp()
 
 import {HTTP} from '../../utils/http.js'
+import {likeModel} from '../../models/likeHttp.js'
+
+let like = new likeModel()
 let http = new HTTP()//实例化一个类
 Page({
   data: {
@@ -33,6 +36,9 @@ Page({
   pageEvent:function(event){
     console.log(event)
     console.log(111);
+    let behavior = event.detail.behavior
+    like.like(behavior, this.data.classic.id, this.data.classic.type)
+
   }
   
 })

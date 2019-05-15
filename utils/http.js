@@ -5,7 +5,6 @@ const tips = {
   1005:'appkey错误',
   3000:'期刊不存在'
 }
-
 class HTTP {
   request(parms){
     if (!parms.method) {
@@ -22,7 +21,7 @@ class HTTP {
       success:(res) => {
         let code = res.statusCode.toString()
         if(code.startsWith('2')){
-            parms.success(res.data)//需要调用，才能执行这个函数
+           parms.success && parms.success(res.data)//需要调用，才能执行这个函数
         }else{
           //console.log(res)
           let error_code = res.data.error_code
