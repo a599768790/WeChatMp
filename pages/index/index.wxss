@@ -1,0 +1,18 @@
+.header{
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* 主轴两端 */
+  align-items:center;
+  /* 副轴垂直居中 */
+  border-top:1px solid #f5f5f5;
+  border-bottom:1px solid #f5f5f5
+}
+
+.epssiode{
+  margin-left:20rxp;
+}
+.like{
+  margin-right:16rpx;
+}
