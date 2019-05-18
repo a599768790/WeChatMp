@@ -1,3 +1,4 @@
+<v-epsiode index="{{classic.index}}"></v-epsiode>
 <v-like bind:componentEvent="pageEvent" count="{{classic.fav_nums}}" like="{{classic.like_status}}" test="{{test}}"></v-like>
 <!-- 在父页面显示组件的属性 -->
 <v-movie img="{{classic.image}}" content="{{classic.content}}"></v-movie>
