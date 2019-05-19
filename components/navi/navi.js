@@ -23,6 +23,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onLeft:function(event){
+      //如果不是最新的，就可以点击←按钮
+      if(!this.properties.latest){
+        this.triggerEvent('left', {}, {})
+      }
+    },
+    onRight:function(event){
+      //如果不是第一期，就可以点击→按钮
+      if (!this.properties.first) {
+        this.triggerEvent('right',{},{})
+      }
+    }
   }
 })

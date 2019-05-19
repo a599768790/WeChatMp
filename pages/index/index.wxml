@@ -5,6 +5,6 @@
   </view>
   <!-- 在父页面显示组件的属性 -->
   <v-movie img="{{classic.image}}" content="{{classic.content}}"></v-movie>
-  <v-navi class="navi"></v-navi>
+  <v-navi bind:left="onNext" bind:right="onPrev" title="{{classic.title}}" class="navi" first="{{first}}" latest="{{latest}}"></v-navi>
 </view>
 
