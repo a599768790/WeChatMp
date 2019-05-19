@@ -1,2 +1,7 @@
 <!--components/music/music.wxml-->
-<text>components/music/music.wxml</text>
+<view>
+  <image src="{{img}}" />
+  <image src="{{playSrc}}" />
+  <image src="images/music.png" />
+  <text>{{content}}</text>
+</view>
