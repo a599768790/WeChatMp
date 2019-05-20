@@ -13,12 +13,6 @@ Page({
     test:1,
     content:'aaa'
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
 
   onLoad: function(options) {
     http.request({
@@ -31,7 +25,11 @@ Page({
         })
       }
     })
-    
+    // likeFn.getLatest((res) => {
+    //   this.setData({
+    //     classic:res
+    //   })
+    // })
   },
   pageEvent:function(event){
     console.log(event)
@@ -39,6 +37,16 @@ Page({
     let behavior = event.detail.behavior
     likeFn.like(behavior, this.data.classic.id, this.data.classic.type)
 
+  },
+  onPrevious:function(event){
+    let index = this.data.classic.index
+    likeFn.getPrevious(index,(res) =>{
+      //console.log(res)
+      this.setData({
+        classic:res,
+        first:likeFn.isFirst(res.index),
+        latest:likeFn.isLatest(res.index)
+      })
+    });
   }
-  
 })
