@@ -13,24 +13,30 @@ class likeModel extends HTTP {
       }
     })
   }
-  getLatest(index,fnCallback){
+  getLatest(fnCallback){
     this.request({
       url:'classic/latest',
       success:(res) => {
         fnCallback(res)
         //传递latestindex进入
-        //this._setLatestIndex(res.index)
+        this._setLatestIndex(res.index)
       }
     })
   }
-
+  getNext(index, fnCallback) {
+    this.request({
+      url: 'classic/' + index + '/next',
+      success: (res) => {
+        fnCallback(res)
+      }
+    });
+  }
 
   getPrevious(index, fnCallback) {
     this.request({
       url: 'classic/' + index + '/previous',
       success: (res) => {
         fnCallback(res)
-        
       }
     });
   }

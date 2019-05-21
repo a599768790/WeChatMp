@@ -10,26 +10,27 @@ let http = new HTTP()//实例化一个类
 Page({
   data: {
     classic:null,
-    test:1,
-    content:'aaa'
+    // latest:true,
+    // first:false
   },
 
   onLoad: function(options) {
-    http.request({
-      url:'classic/latest',
-      success:(res) => {
-        console.log(res)
-        this.setData({//获取到的值更新给classic，传给组件去渲染页面
-          classic:res,
-          // test:1
-        })
-      }
-    })
-    // likeFn.getLatest((res) => {
-    //   this.setData({
-    //     classic:res
-    //   })
+    // http.request({
+    //   url:'classic/latest',
+    //   success:(res) => {
+    //     console.log(res)
+    //     this.setData({//获取到的值更新给classic，传给组件去渲染页面
+    //       classic:res,
+    //       // test:1
+    //     })
+    //   }
     // })
+    likeFn.getLatest((res) => {
+      this.setData({
+        classic:res,
+        //latest: likeFn.isLatest(res.index)
+      })
+    })
   },
   pageEvent:function(event){
     console.log(event)
@@ -38,6 +39,7 @@ Page({
     likeFn.like(behavior, this.data.classic.id, this.data.classic.type)
 
   },
+
   onPrevious:function(event){
     let index = this.data.classic.index
     likeFn.getPrevious(index,(res) =>{
@@ -46,6 +48,17 @@ Page({
         classic:res,
         first:likeFn.isFirst(res.index),
         latest:likeFn.isLatest(res.index)
+      })
+    });
+  },
+  onNext:function(){
+    let index = this.data.classic.index
+    likeFn.getNext(index, (res) => {
+      //console.log(res)
+      this.setData({
+        classic: res,
+        first: likeFn.isFirst(res.index),
+        latest: likeFn.isLatest(res.index)
       })
     });
   }
