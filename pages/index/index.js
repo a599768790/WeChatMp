@@ -32,6 +32,7 @@ Page({
       })
     })
   },
+  
   pageEvent:function(event){
     console.log(event)
     console.log(111);
@@ -39,21 +40,16 @@ Page({
     likeFn.like(behavior, this.data.classic.id, this.data.classic.type)
 
   },
-
+  
   onPrevious:function(event){
-    let index = this.data.classic.index
-    likeFn.getPrevious(index,(res) =>{
-      //console.log(res)
-      this.setData({
-        classic:res,
-        first:likeFn.isFirst(res.index),
-        latest:likeFn.isLatest(res.index)
-      })
-    });
+    this._updateClassic('previous')
   },
   onNext:function(){
+    this._updateClassic('next')
+  },
+  _updateClassic: function (nextOrPre) {
     let index = this.data.classic.index
-    likeFn.getNext(index, (res) => {
+    likeFn.getClassic(index, nextOrPre, (res) => {
       //console.log(res)
       this.setData({
         classic: res,
@@ -62,4 +58,26 @@ Page({
       })
     });
   }
+  // onPrevious:function(event){
+  //   let index = this.data.classic.index
+  //   likeFn.getPrevious(index,(res) =>{
+  //     //console.log(res)
+  //     this.setData({
+  //       classic:res,
+  //       first:likeFn.isFirst(res.index),
+  //       latest:likeFn.isLatest(res.index)
+  //     })
+  //   });
+  // },
+  // onNext:function(){
+  //   let index = this.data.classic.index
+  //   likeFn.getNext(index, (res) => {
+  //     //console.log(res)
+  //     this.setData({
+  //       classic: res,
+  //       first: likeFn.isFirst(res.index),
+  //       latest: likeFn.isLatest(res.index)
+  //     })
+  //   });
+  // }
 })
