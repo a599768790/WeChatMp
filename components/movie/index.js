@@ -9,6 +9,9 @@ Component({
     },
     content:{
       type:String
+    },
+    hidden:{
+      type:Boolean
     }
 
   },

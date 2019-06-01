@@ -11,7 +11,10 @@ Page({
   data: {
     classic:null,
     // latest:true,
-    // first:false
+    // first:false,
+    // likeCount:0,
+    // likeStatus:false
+
   },
 
   onLoad: function(options) {
@@ -25,10 +28,14 @@ Page({
     //     })
     //   }
     // })
+    //初始化的时候调用
     likeFn.getLatest((res) => {
       this.setData({
         classic:res,
         //latest: likeFn.isLatest(res.index)
+        //更新喜欢组件
+        // likeCount:res.fav_nums,
+        // likeStatus:res.like_status
       })
     })
   },
@@ -49,7 +56,9 @@ Page({
   },
   _updateClassic: function (nextOrPre) {
     let index = this.data.classic.index
+    
     likeFn.getClassic(index, nextOrPre, (res) => {
+      // this._getLikeStatus(res.id,res.type)
       //console.log(res)
       this.setData({
         classic: res,
@@ -57,7 +66,7 @@ Page({
         latest: likeFn.isLatest(res.index)
       })
     });
-  }
+  },
   // onPrevious:function(event){
   //   let index = this.data.classic.index
   //   likeFn.getPrevious(index,(res) =>{
@@ -80,4 +89,15 @@ Page({
   //     })
   //   });
   // }
+  
+  //获取喜欢状态
+  _getLikeStatus: function (artID, category) {
+    likeFn.getClassicLikeStatus(artID, category,(res)=>{
+      this.setData({
+        likeCount:res.fav_nums,
+        likeStatus:res.like_status
+      })
+    })
+  }
+
 })

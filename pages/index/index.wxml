@@ -4,7 +4,10 @@
     <v-like class="like" bind:componentEvent="pageEvent" count="{{classic.fav_nums}}" like="{{classic.like_status}}" test="{{test}}"></v-like>
   </view>
   <!-- 在父页面显示组件的属性 -->
-  <v-movie img="{{classic.image}}" content="{{classic.content}}"></v-movie>
+  <v-movie hidden="{{classic.type!=100}}" img="{{classic.image}}" content="{{classic.content}}"></v-movie>
+  <v-music hidden="{{classic.type!=200}}" img="{{classic.image}}" content="{{classic.content}}"></v-music>
+  <v-essay hidden="{{classic.type!=300}}" img="{{classic.image}}" content="{{classic.content}}"></v-essay>
+
   <v-navi bind:left="onPrevious" bind:right="onNext" title="{{classic.title}}" class="navi" first="{{first}}" latest="{{latest}}"></v-navi>
 </view>
 

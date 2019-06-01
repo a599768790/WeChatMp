@@ -13,6 +13,14 @@ class likeModel extends HTTP {
       }
     })
   }
+  //期刊id号、
+  getClassicLikeStatus(artID, category,fnCallback){
+    this.request({
+      url: 'class/' + category + '/' + artID + '/favor',
+      success: fnCallback
+    })
+  }
+
   //获取最近一期
   getLatest(fnCallback){
     this.request({
@@ -22,8 +30,8 @@ class likeModel extends HTTP {
         //把最新的index写入缓存
         this._setLatestIndex(res.index)
         //最新一期写入
-        let key = this._getkey(res.index)
-        wx.setStorageSync(key, res)
+        // let key = this._getkey(res.index)
+        // wx.setStorageSync(key, res)
       }
     })
   }
@@ -46,9 +54,9 @@ class likeModel extends HTTP {
   // }
   //获取上一期或者下一期
    getClassic(index,nextOrPre,fnCallback) {
-    let key = nextOrPre == 'next' ? this._getkey(index+1):this._getkey(index-1)
-    let classic = wx.getStorageSync(key)
-    if (!classic){
+    // let key = nextOrPre == 'next' ? this._getkey(index+1):this._getkey(index-1)
+    // let classic = wx.getStorageSync(key)
+    // if (!classic){
       this.request({
         url: 'classic/' + index + '/' + nextOrPre,
         success: (res) => {
@@ -57,10 +65,10 @@ class likeModel extends HTTP {
           fnCallback(res)
         }
       });
-    }else{
-      //缓存有classic，返回classic
-      fnCallback(classic)
-    }
+    // }else{
+    //   //缓存有classic，返回classic
+    //   fnCallback(classic)
+    // }
   }
 
 
@@ -82,12 +90,13 @@ class likeModel extends HTTP {
     let index = wx.getStorageSync('latest')
     return index
   }
-
+  //获取Key
   _getkey(index){
     let key = 'classic-'+index
     return key
   }
 
+  
 
 }
 export {likeModel}

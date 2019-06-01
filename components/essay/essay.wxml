@@ -1,5 +1,5 @@
 <!--components/essay/essay.wxml-->
-<view class='movie-container'>
+<view hidden="{{hidden}}" class='movie-container'>
 <image class='movie-img' src="{{img}}" />
 <image class='tag' src="images/eassy.png" />
 <text class='content'>{{content}}</text>

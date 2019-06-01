@@ -1,5 +1,5 @@
 <!--components/music/music.wxml-->
-<view>
+<view hidden="{{hidden}}">
   <image src="{{img}}" />
   <image src="{{playSrc}}" />
   <image src="images/music.png" />
