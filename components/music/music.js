@@ -6,7 +6,8 @@ Component({
   properties: {
     img:String,
     content:String,
-    hidden:Boolean
+    hidden:Boolean,
+    src:String
   },
 
   /**

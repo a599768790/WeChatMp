@@ -1,1 +1,2 @@
 /* components/essay/essay.wxss */
+@import "../../models/common.wxss";
