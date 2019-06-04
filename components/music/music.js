@@ -23,6 +23,7 @@ Component({
   },
   attached:function(event){
     this._recoverStatus()
+    this._monitorSwitch()
   },
   /**
    * 组件的方法列表
@@ -55,6 +56,20 @@ Component({
           playing: true
         })
       }
+    },
+    _monitorSwitch:function(){
+      mMgr.onPlay(()=>{
+        this._recoverStatus()
+      })
+      mMgr.onPause(() => {
+        this._recoverStatus()
+      })
+      mMgr.onStop(() => {
+        this._recoverStatus()
+      })
+      mMgr.onEnded(() => {
+        this._recoverStatus()
+      })
     }
   }
   
