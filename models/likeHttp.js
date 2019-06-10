@@ -95,8 +95,16 @@ class likeModel extends HTTP {
     let key = 'classic-'+index
     return key
   }
-
   
+  //获取最近一期
+  getBookList(fnCallback) {
+    this.request({
+      url: 'book/hot_list',
+      success: (res) => {
+        fnCallback(res)
+      }
+    })
+  }
 
 }
 export {likeModel}

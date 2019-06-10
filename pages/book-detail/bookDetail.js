@@ -1,5 +1,5 @@
-// pages/my/my.js
-Component({
+// pages/book-detail/bookDetail.js
+Page({
   /**
    * 组件的属性列表
    */
@@ -13,14 +13,7 @@ Component({
   data: {
 
   },
-  onLoad:function(){
-    likeFn.getBookList((res)=>{
-      console.log(res)
-    })
-  },
-  onShow:function(){
-    console.log(111);
-  },
+
   /**
    * 组件的方法列表
    */
