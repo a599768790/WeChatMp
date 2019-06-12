@@ -22,6 +22,14 @@ Component({
   methods: {
     click:function(){
       this.triggerEvent('click', {}, {})
+    },
+
+    onTap:function(){
+      console.log(222)
+      const bid = this.properties.book.id
+      wx.navigateTo({
+        url: '/pages/book-detail/bookDetail?bid=' + bid,
+      })
     }
   }
 })

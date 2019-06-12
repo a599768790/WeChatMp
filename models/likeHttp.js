@@ -105,6 +105,33 @@ class likeModel extends HTTP {
       }
     })
   }
+  //获取书籍详细信息
+  getDetail(bid,fnCallback){
+    this.request({
+      url: 'book/' + bid + '/detail',
+      success:(res)=>{
+        fnCallback(res)
+      }
+    })
+  }
+  //获取书籍详细信息
+  getLikeStatus(bid, fnCallback) {
+    this.request({
+      url: 'book/' + bid + '/favor',
+      success: (res) => {
+        fnCallback(res)
+      }
+    })
+  }
+  //获取书籍详细信息
+  getComments(bid, fnCallback) {
+    this.request({
+      url: 'book/' + bid + '/short_comment',
+      success: (res) => {
+        fnCallback(res)
+      }
+    })
+  }
 
 }
 export {likeModel}
