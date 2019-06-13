@@ -28,7 +28,7 @@ Page({
     likeFn.getDetail(bid,(res) => {
       console.log(res)
       this.setData({
-        books: res
+        book: res
       })
     })
   //获取喜欢状态
@@ -44,7 +44,7 @@ Page({
     likeFn.getComments(bid,(res) => {
       console.log(res)
       this.setData({
-        comments: res
+        comments: res.comments
       })
     })
   },

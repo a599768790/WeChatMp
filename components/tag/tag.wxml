@@ -1,0 +1,5 @@
+<!--components/tag/tag.wxml-->
+<!-- <text>components/tag/tag.wxml</text> -->
+<view class="container">
+  <text>{{text}}</text>
+</view>
