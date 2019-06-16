@@ -132,6 +132,19 @@ class likeModel extends HTTP {
       }
     })
   }
-
+  //提交短评
+  postComment(bid, comment, fnCallback){
+    this.request({
+      url: 'book/add/short_comment',
+      method:'POST',
+      data:{
+        book_id:bid,
+        content:comment
+      },
+      success: (res) => {
+        fnCallback(res)
+      }
+    })
+  }
 }
 export {likeModel}

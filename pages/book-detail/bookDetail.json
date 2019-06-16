@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "v-tag": "/components/tag/tag"
+    "v-tag": "/components/tag/tag",
+    "v-like": "/components/like/index",
+    "v-mask": "/components/mask/mask"
   }
 }

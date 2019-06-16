@@ -19,7 +19,8 @@ Page({
     comments:[],
     book:null,
     likeStatus:false,
-    likeCount:0
+    likeCount:0,
+    isPosting:false
   },
   onLoad:function(options){
     const bid = options.bid
@@ -36,7 +37,7 @@ Page({
       console.log(res)
       this.setData({
         likeStatus: res.like_status,
-        likeConut:res.fav_nums
+        likeCount: res.fav_nums
 
       })
     })
@@ -47,11 +48,57 @@ Page({
         comments: res.comments
       })
     })
+    
+  },
+
+  onLike: function (event) {
+    const like_or_cancel = event.detail.behavior
+    likeFn.like(like_or_cancel, this.data.book.id, 400)
+  },
+  //提交短评
+  onFakePost:function(){
+    this.setData({
+      isPosting:true
+    })
+  },
+  //取消按钮
+  onCancel: function () {
+    this.setData({
+      isPosting: false
+    })
+  },
+  onPost: function (event) {
+    
+    const comment = event.detail.text || event.detail.value
+    if (!comment) {
+      return
+    }
+    if(comment.length > 12){
+      wx.showToast({
+        title: '短评最多12个字',
+        icon:''
+      })
+      return
+    }
+    likeFn.postComment(this.data.book.id,comment,(res)=>{
+      wx.showToast({
+        title: '+1',
+        icon: 'none'
+      })
+      this.data.comments.unshift({
+        content:comment,
+        nums:1
+      })
+      this.setData({
+        comments:this.data.comments,
+        isPosting:false
+      })
+    })
   },
   /**
    * 组件的方法列表
    */
   methods: {
-
+    
   }
 })
